@@ -16,6 +16,7 @@ body {
   font-family: Roboto, sans-serif;
   color: var(--text);
   margin: 0;
+  overflow-x: hidden;
 }
 h1,
 h2,
@@ -45,6 +46,7 @@ img {
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1158px;
+    width: 100%;
   }
 }
 
@@ -233,6 +235,7 @@ img {
   transform: translateX(100%);
   transition: transform var(--transition-hover);
 }
+
 .mobile-menu.is-open {
   transform: translateX(0);
 }
@@ -261,11 +264,16 @@ img {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 24px;
   line-height: 40px;
   letter-spacing: 0.02em;
   text-transform: capitalize;
   margin-bottom: 284px;
+}
+@media screen and (max-width: 480px) {
+  .mobile-nav {
+    margin-bottom: 100px;
+  }
 }
 .mobile-nav-item {
   margin-bottom: 40px;
@@ -287,13 +295,23 @@ img {
 }
 .mobile-contacts {
 }
-.mobile-contact-item {
+/*.mobile-contact-item {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
   letter-spacing: 0.02em;
+}*/
+.mobile-contact-tel {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: var(--primary-brand);
+  font-style: normal;
+  text-decoration: none;
+  line-height: 1.11;
 }
 .mobile-contact-link {
   text-decoration: none;
@@ -301,13 +319,13 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     font-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.mobile-contact-link:hover,
+/*.mobile-contact-link:hover,
 .mobile-contact-link:focus {
   font-weight: 700;
   font-size: 36px;
   line-height: 40px;
   color: var(--primary-brand);
-}
+}*/
 .mobile-social {
   display: flex;
   justify-content: space-between;
@@ -485,6 +503,14 @@ img {
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+@media screen and (max-width: 479px) {
+  .modal {
+    max-width: 408px;
+    width: 100%;
+  }
+}
+
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.9);
 }
